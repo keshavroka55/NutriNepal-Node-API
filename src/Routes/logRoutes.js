@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 
 // Create a log
 router.post(
-  '/',
+  '/add',
   auth,
   body('foodId').notEmpty(),
   body('quantity').isNumeric(),

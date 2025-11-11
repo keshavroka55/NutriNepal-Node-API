@@ -12,7 +12,7 @@ const router = express.Router();
  * @type GET
  * @returns response
  */
-router.get("/all", authenticateUser, getAllUsers);
+router.get("/", authenticateUser, getAllUsers);
 
 /**
  * @description delete a user by ID (optional enhancement)

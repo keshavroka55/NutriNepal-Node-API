@@ -1,0 +1,9 @@
+## Endpoints (summary)
+- `POST /api/auth/register` - register user
+- `POST /api/auth/login` - login
+- `GET /api/foods` - list/search foods
+- `POST /api/foods` - create food (admin)
+- `GET /api/foods/:id` - single food
+- `POST /api/logs` - create user food log
+- `GET /api/logs` - list user logs
+- `GET /api/logs/totals` - compute totals for date/range

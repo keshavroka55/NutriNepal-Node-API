@@ -11,6 +11,11 @@ require('dotenv').config();
 const authRoutes = require('./src/Routes/authRoute');
 const userRoutes = require("./src/Routes/userRoute");
 
+// food routes
+const foodRoutes = require("./src/Routes/foodRoutes");
+const logRoutes = require("./src/Routes/logRoutes"); 
+
+
 const app = express();
 // allow all the origin (only for developement to run on browwer.. )
 app.use(cors());
@@ -23,6 +28,10 @@ db.connect();
 // routers
 app.use("/api/auth/v1", authRoutes);
 app.use("/api/v1/users", userRoutes);
+
+//register route 
+app.use('/api/foods',foodRoutes);
+app.use('/api/logs',logRoutes);
 
 
 const PORT = process.env.PORT || 5000;

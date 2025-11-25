@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 
 // Create food (admin only)
 router.post(
-  '/',
+  '/add',
   auth,
   body('name_en').notEmpty(),
   body('serving_size').isNumeric(),

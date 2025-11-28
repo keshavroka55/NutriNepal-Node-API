@@ -6,8 +6,6 @@ const {authenticateUser} = require('../middleware/authMiddleware'); // JWT auth 
 // Create or update profile (user must be authenticated)
 router.post('/profile', authenticateUser, profileController.upsertProfile);
 router.put('/profile', authenticateUser, profileController.upsertProfile);
-
-// Optional: get profile
 router.get('/profile', authenticateUser, profileController.getProfile);
 
 module.exports = router;

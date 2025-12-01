@@ -44,9 +44,9 @@ async function seed() {
 
     // --- 2) Insert sample foods (if not exists) ---
     const samples = [
-      { name_en: 'Boiled Egg', name_np: 'उबालिएको अण्डा', serving_size: 50, serving_unit: 'g', calories_kcal: 78, protein_g: 6.5, fat_g: 5.3, carbs_g: 0.6, category: 'Non-Vegetarian', source: 'local_sample', aliases: ['anda','boiled egg'] },
-      { name_en: 'Cooked White Rice', name_np: 'भात', serving_size: 100, serving_unit: 'g', calories_kcal: 130, protein_g: 2.4, fat_g: 0.2, carbs_g: 28, category: 'Grain', source: 'local_sample', aliases: ['bhaat','rice'] },
-      { name_en: 'Masoor Dal (cooked)', name_np: 'दाल', serving_size: 100, serving_unit: 'g', calories_kcal: 116, protein_g: 9, fat_g: 0.4, carbs_g: 20, category: 'Legume', source: 'local_sample', aliases: ['dal','masoor'] }
+      { name_en: 'Meat', name_np: 'उबालिएको अण्डा', serving_size: 50, serving_unit: 'g', calories_kcal: 78, protein_g: 6.5, fat_g: 5.3, carbs_g: 0.6, category: 'Non-Vegetarian', source: 'local_sample', aliases: ['anda','boiled egg'] },
+      { name_en: 'APPle', name_np: 'भात', serving_size: 100, serving_unit: 'g', calories_kcal: 130, protein_g: 2.4, fat_g: 0.2, carbs_g: 28, category: 'Grain', source: 'local_sample', aliases: ['bhaat','rice'] },
+      { name_en: 'Tarkari', name_np: 'दाल', serving_size: 100, serving_unit: 'g', calories_kcal: 116, protein_g: 9, fat_g: 0.4, carbs_g: 20, category: 'Legume', source: 'local_sample', aliases: ['dal','masoor'] }
     ];
 
     let insertedFoods = 0;

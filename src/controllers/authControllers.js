@@ -60,7 +60,7 @@ const login = async (req, res) => {
     // console.log("JWT_SECRET:", config.JWT_SECRET);
     // console.log("JWT_EXPIRATION:", config.JWT_EXPIRATION);
 
-    console.log("TYPE OF SECRET:", typeof config.JWT_SECRET, "VALUE:", config.JWT_SECRET);
+    // console.log("TYPE OF SECRET:", typeof config.JWT_SECRET, "VALUE:", config.JWT_SECRET);
 
 
     const token = jwt.sign({ id: user._id }, config.JWT_SECRET, {

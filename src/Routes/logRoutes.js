@@ -37,7 +37,7 @@ router.post(
 );
 
 // Get user's logs (with food populated)
-router.get('/users', auth, async (req, res) => {
+router.get('/history', auth, async (req, res) => {
   try {
     const { from, to } = req.query;
     const filter = { user: req.user._id };

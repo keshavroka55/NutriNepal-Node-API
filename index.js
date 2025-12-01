@@ -2,6 +2,7 @@ const express = require('express'); // web framwork for handle http request and 
 const config = require("./src/config/config");
 const db = require("./src/config/db");
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 // while the error of jwt_secret logic one 
 require('dotenv').config();
@@ -19,11 +20,12 @@ const logRoutes = require("./src/Routes/logRoutes");
 const profileRoutes = require('./src/Routes/profile');
 
 
+
 const app = express();
 // allow all the origin (only for developement to run on browwer.. )
 app.use(cors());
 
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Connect to the database
 db.connect();
@@ -32,7 +34,6 @@ db.connect();
 app.use("/api/auth/v1", authRoutes);
 app.use("/api/v1/users", userRoutes);
 
-//register route 
 app.use('/api/foods',foodRoutes);
 app.use('/api/logs',logRoutes);
 

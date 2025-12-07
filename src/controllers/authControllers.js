@@ -14,7 +14,9 @@ const register = async (req, res) => {
     }
 
     // Check if user already exists by email
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ 
+      $or: [{ email }, { username }] });
+
     if (existingUser) {
       return res.status(400).json({ error: "User already exists" });
     }
@@ -28,10 +30,16 @@ const register = async (req, res) => {
       role: userRole
     });
 
+    const token = jwt.sign({ id: user._id }, config.JWT_SECRET, { expiresIn: config.JWT_EXPIRATION });
+
+
     await user.save();
 
-    res.status(201).json({ message: "User registered successfully", user });
+    res.status(201).json({ message: "User registered successfully", token, user});
   } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({ error: "Username or email already exists" });
+    }
     console.error("Error registering user:", error);
     res.status(500).json({ error: "Server error. Please try again later." });
   }

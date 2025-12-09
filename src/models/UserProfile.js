@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const UserProfileSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, unique: true },
 
-    name: { type: String, trim: true, required: true },
+    username: { type: String, trim: true, required: true },
     email: { type: String, trim: true, required: true, lowercase: true },
 
     gender: { type: String, enum: ['male', 'female', 'other', 'prefer_not_to_say'], default: 'prefer_not_to_say' },

@@ -1,4 +1,4 @@
-
+// config.js - Loads environment variables and exports key configurations
 const dotenv = require('dotenv');
 dotenv.config();
 const config = {
@@ -7,8 +7,6 @@ const config = {
   JWT_SECRET: process.env.JWT_SECRET ,
   JWT_EXPIRATION: process.env.JWT_EXPIRATION ,
 };
-
-// console.log("CONFIG VALUES LOADED:", config); 
 
 module.exports = config;
 
